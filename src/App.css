@@ -1,0 +1,216 @@
+.body{
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+padding: 18px 100px 100px 100px;
+position: relative;
+}
+
+.spot-logo{
+  position: absolute;
+}
+
+.badge {
+  height: 85px;
+  width: 85px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: #A9A9A9 ;
+  font-size: 19px;
+  color: white;
+  font-weight: bold;
+}
+
+.spr-office{
+  position: absolute;
+  font-size: 20px;
+}
+
+.spr-office, .wrap{
+  top: 120px;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  top:10px;
+}
+
+.search-icon{
+right: 2px;
+padding: 5px;
+pointer-events: none;
+position: absolute;
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+  border: 1px solid #00B4CC;
+  padding: 5px;
+  height: 20px;
+  border-radius: 2.5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: black;
+}
+
+.searchButton {
+  position: absolute; 
+  right: -50px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  color: #fff;
+  border-radius: 2.5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.searchButton i{
+padding: 2px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 12%;
+  position: absolute;
+  right: 10%;
+  transform: translate(-50%, -50%);
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.table-renderer{
+  -webkit-column-count:3;    
+  -webkit-column-gap:0;
+  flex-flow:row wrap;
+  display: flex;
+  position: relative;
+  border: 2px solid black;
+  height: 1100px;
+  top: 150px;
+  padding: 40px;
+  background-color: white;
+  justify-content: space-around;
+  margin-bottom: 100px;
+}
+
+.table-container{
+  flex: 1;
+  flex-shrink: 0;
+  flex-grow: 0; 
+  flex-basis: 300px;
+  width: 170px;
+  position: relative;
+  padding-top: 15px;
+  height: 23%;
+}
+
+.table{
+  flex: 1;
+  position: relative;
+  top: 30px;
+  width: 275px;
+  height: 160px;
+  background: #DCDCDC;
+  border: 3px solid white;
+}
+
+.table p{
+  position: absolute;
+  margin: 20px;
+  font-size: 20px;
+  top: 36%;
+  left: 14%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+#seat1, #seat2, #seat3, #seat4{
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  left: 25px;
+}
+
+#seat3, #seat4{
+  top: 182px;
+}
+
+#seat2, #seat4{
+ left: 180px;
+}
+
+.hoverDialog{
+  z-index: 1;
+  background: white;
+  box-shadow: 2px 2px 5px #888888;
+  position: absolute;
+  padding: 15px;
+  height: 125px;
+  width: 170px;
+  border: 0.1px solid #A9A9A9 ;
+}
+
+.empDetails{
+  margin-top:-45px;
+  margin-left: 65px; 
+  font-size: 11px;
+}
+
+#empName{
+  font-size: 14px;
+}
+
+.empTeam{
+margin-top: 17px;
+}
+
+.navTeam{
+  font-size: 10px;
+  color: #D2B48C;
+}
+
+.navTeamName{
+font-size: 13px;
+}
+
+.badge1 {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  background: white ;
+  font-size: 19px;
+  border: 0.1px solid #A9A9A9 ;
+}
+
+div.image{
+ content:url(https://vignette1.wikia.nocookie.net/epic-rap-battles-of-cartoons/images/9/9f/Doraemon.png/revision/latest/scale-to-width-down/1000?cb=20161020103841);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
