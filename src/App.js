@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
 import ReactHover from 'react-hover';
-
-
+import ToggleButton from './ButtonToggle.js';
 
 var request = require('superagent-bluebird-promise');
 
@@ -28,9 +27,7 @@ function fillColorInSeats(occupancyData){
 }
 
  function onHoverr(key, e){
-  console.log("hello");
     return( <div>
-            <span>DAP</span>
             <ReactHover>
             <span>ddd</span>
             <ReactHover.Hover>
@@ -44,15 +41,11 @@ function fillColorInSeats(occupancyData){
 
 function SeatComponent(props){
   const optionsCursorTrueWithMargin = {
+    attachment: 'together',
   followCursor: false,
-  shiftX: 0,
-  shiftY: 0
+  shiftX: -160,
+  shiftY: -200
 };
-
-  request.get('/getEmployeeData')
-        .then((res) => {
-           this.setState({table: res.body})
-          });
 
   return ( <ReactHover
           options={optionsCursorTrueWithMargin}>
@@ -94,13 +87,14 @@ function SeatComponent(props){
   </div>);
 }
 
- 
+
 class App extends React.Component {
 
     constructor(props) {
        super(props);
        this.state = {
-        table : []
+        table : [],
+        employee:{}
        };
      }
 
@@ -109,10 +103,39 @@ class App extends React.Component {
         .then((res) => {
            this.setState({table: res.body})
           });
+
+        request.get('/getEmployeeData')
+        .then((res) => {
+           this.setState({employee: res.body});
+          });       
     }
+
+     handleChange = (e) => {
+      var empNames=[];
+      const employee= this.state.employee;
+      var enteredName = e.target.value;
+
+      if(enteredName != null){
+        Object.keys(employee).forEach(function(empName) {
+          (employee[empName].e_name).includes(enteredName)? console.log("hello") : console.log("hii");
+
+          }
+        });
+      }
+
+
+
+
+      // Object.keys(employee).forEach(function(empName) {
+      //    empNames.push(employee[empName].e_name);
+      // });
+      //console.log(empNames);
+     }
 
     render(){
       const table = this.state.table;
+      const employee = this.state.employee;
+
       return (
       <div className="container col-lg-12 col-md-12 col-sm-12 col-xs-12">
     
@@ -124,11 +147,9 @@ class App extends React.Component {
 
       <div className="wrap">
         <div className="search">
-          <i className="fa fa-search search-icon "></i> 
-          <input type="text" className="searchTerm" placeholder="Search" />  
-          <button type="submit" className="searchButton">
-          <i className="fa fa-filter "></i>
-          </button> 
+          <i className="fa fa-search search-icon "></i>
+         <input className="searchTerm" placeholder="Search" onChange={this.handleChange}/>
+          <ToggleButton />
        </div>
       </div>
 
