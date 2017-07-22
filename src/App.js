@@ -117,10 +117,10 @@ class App extends React.Component {
 
       if(enteredName != null){
         Object.keys(employee).forEach(function(empName) {
-          (employee[empName].e_name).includes(enteredName)? console.log("hello") : console.log("hii");
+          (employee[empName].e_name).includes(enteredName)? console.log(empName) : console.log("");
 
           }
-        });
+        );
       }
 
 
