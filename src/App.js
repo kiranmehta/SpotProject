@@ -3,7 +3,10 @@ import './App.css';
 import ReactHover from 'react-hover';
 import ToggleButton from './ButtonToggle.js';
 
+import ChooseName from './ChooseName';
 var request = require('superagent-bluebird-promise');
+
+var empNames = [];
 
 function TableComponent(props){
   var seatData = props.data;
@@ -110,33 +113,22 @@ class App extends React.Component {
           });       
     }
 
-     handleChange = (e) => {
-      var empNames=[];
-      const employee= this.state.employee;
-      var enteredName = e.target.value;
-
-      if(enteredName != null){
+     getEmpNames = (employee) => {
         Object.keys(employee).forEach(function(empName) {
-          (employee[empName].e_name).includes(enteredName)? console.log(empName) : console.log("");
-
-          }
-        );
+          empNames.push(employee[empName].e_name);
+          console.log(empNames)
+          return empNames;
+          });
       }
-
-
-
-
-      // Object.keys(employee).forEach(function(empName) {
-      //    empNames.push(employee[empName].e_name);
-      // });
-      //console.log(empNames);
-     }
+     
 
     render(){
       const table = this.state.table;
       const employee = this.state.employee;
 
+      
       return (
+
       <div className="container col-lg-12 col-md-12 col-sm-12 col-xs-12">
     
       <div className="spot-logo">
@@ -147,14 +139,20 @@ class App extends React.Component {
 
       <div className="wrap">
         <div className="search">
-          <i className="fa fa-search search-icon "></i>
-         <input className="searchTerm" placeholder="Search" onChange={this.handleChange}/>
+        {this.getEmpNames(employee)}
+        <i className="fa fa-search search-icon "></i>
+        <ChooseName className="searchTerm" options={empNames} max={12} />
+          
+         
+
+
           <ToggleButton />
        </div>
       </div>
 
       <div className="table-renderer"> {table.map( obj => (<TableComponent data={obj} />))}
       </div> 
+
     </div>);
 
     }

@@ -5,8 +5,11 @@
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-dropdown-input2": "^0.1.14",
     "react-fontawesome": "^1.6.1",
-    "react-hover": "^1.1.0"
+    "react-hover": "^1.1.0",
+    "react-select": "^1.0.0-rc.5",
+    "react-bootstrap": ">=0.18.0"
   },
   "devDependencies": {
     "react-scripts": "1.0.7"

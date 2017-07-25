@@ -34,17 +34,19 @@ position: relative;
   top: 120px;
 }
 
-.search {
+.dropdown , .search {
   width: 100%;
   position: relative;
   top:10px;
 }
 
 .search-icon{
-right: 2px;
+top: 13px;
+right: 6px;
 padding: 5px;
 pointer-events: none;
 position: absolute;
+z-index: 10;
 }
 
 .searchTerm {
@@ -58,10 +60,6 @@ position: absolute;
   color: #9DBFAF;
 }
 
-.searchTerm:focus{
-  color: black;
-}
-
 .searchButton {
   position: absolute; 
   right: -50px;
@@ -73,6 +71,7 @@ position: absolute;
   border-radius: 2.5px;
   cursor: pointer;
   font-size: 18px;
+  top:10px;
 }
 
 .searchButton i{
@@ -114,7 +113,7 @@ padding: 2px;
   width: 170px;
   position: relative;
   padding-top: 15px;
-  height: 23%;
+  height: 24%;
 }
 
 .table{
@@ -141,15 +140,15 @@ padding: 2px;
   position: absolute;
   height: 60px;
   width: 60px;
-  left: 25px;
+  left: 42px;
 }
 
 #seat3, #seat4{
-  top: 182px;
+  top: 177px;
 }
 
 #seat2, #seat4{
- left: 180px;
+ left: 185px;
 }
 
 .hoverDialog{
@@ -158,8 +157,8 @@ padding: 2px;
   background: white;
   box-shadow: 2px 2px 5px #888888;
   padding: 15px;
-  height: 125px;
-  width: 170px;
+  height: 165px;
+  width: 190px;
   border: 0.1px solid #A9A9A9 ;
 }
 
@@ -174,7 +173,7 @@ padding: 2px;
 }
 
 .empTeam{
-margin-top: 17px;
+margin-top: 15px;
 }
 
 .navTeam{
@@ -215,7 +214,28 @@ div.image{
   position: relative;
 }
 
+.dropdown.open>.dropdown-input.dropdown-menu{
+z-index: 1;
+}
 
+.dropdown-input.dropdown-menu>li>a:hover, .dropdown-input.dropdown-menu>li>a:focus {
+  color:#333;
+  background-color:#fff;
+}
+.dropdown-input.dropdown-menu>.active>a:hover, .dropdown-input.dropdown-menu>.active>a:focus {
+  text-decoration:none;
+  color:#fff;
+  background-color:#337ab7;
+}
+.dropdown-input.dropdown-menu>.disabled>a {
+  color: #999;
+  font-style: italic;
+}
+.dropdown-input.dropdown-menu>.active.disabled>a {
+  text-decoration:none;
+  color: #999;
+  background-color:#fff;
+}
 
 
 
